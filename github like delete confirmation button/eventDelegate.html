@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Delegate Event</h2>
+  <section id="section-container">
+    <h4>Delegate vai er list</h4>
+    <ul id="list-container">
+      <li class="list">Lorem, ipsum.</li>
+      <li class="list" id="second-item">Praesentium, maiores?</li>
+      <li class="list">Repellat, consectetur!</li>
+      <li class="list">Fugit, est!</li>
+      <li class="list">Officiis, ipsum?</li>
+      <li class="list">Tempora, debitis?</li>
+    </ul>
+    <button id="add-button">New item</button>
+  </section>
+<script>
+ document.getElementById('add-button').addEventListener('click',function(){  
+  const li=document.createElement('li');
+  li.innerText='Brand New Item';
+  const parent=document.getElementById('list-container');
+  parent.appendChild(li);
+ });
+
+ document.getElementById('list-container').addEventListener('click',function(event){
+        event.target.parentNode.removeChild(event.target);
+ })
+
+</script>
+
+</body>
+</html>
